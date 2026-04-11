@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shashank Physiotherapy Centre</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: #ffffff;
+        color: #1e293b;
+      } /* NAVBAR */
+      header {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .navbar {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+      }
+      .logo img {
+        height: 45px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap; /* IMPORTANT */
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #1e293b;
+        font-weight: 500;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: #22c55e;
+        left: 0;
+        bottom: -5px;
+        transition: 0.3s;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        .nav-links {
+          justify-content: center;
+          gap: 15px;
+          font-size: 14px;
+        }
+      }
+      header {
+        width: 100%;
+        overflow: hidden;
+      } /* HERO */
+      .hero {
+        max-width: 1200px;
+        margin: auto;
+        padding: 80px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      } /* LEFT CONTENT */
+      .hero-left {
+        flex: 1;
+      } /* RIGHT IMAGE */
+      .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+      .hero-right img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      } /* Glass Cards */
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .badge {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 8px 14px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        font-size: 13px;
+      } /* Heading */
+      .hero h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #0ea5e9, #22c55e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      } /* Subheading */
+      .hero p {
+        font-size: 15px;
+        color: #475569;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      } /* Buttons */
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .btn {
+        padding: 10px 18px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      .primary {
+        background: linear-gradient(90deg, #22c55e, #0ea5e9);
+        color: white;
+      }
+      .secondary {
+        background: white;
+        border: 1px solid #e2e8f0;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      } /* Rating */
+      .rating {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .counter {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 5px;
+        color: #0ea5e9;
+      } /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        .badges {
+          justify-content: center;
+        }
+        .buttons {
+          justify-content: center;
+        }
+      }
+      .services {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+      }
+      .services h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+      .service-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+        text-align: left;
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      }
+      .service-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .service-card p {
+        font-size: 14px;
+        color: #475569;
+        line-height: 1.5;
+      }
+      .programs {
+        padding: 90px 20px;
+        text-align: center;
+        color: white; /* YOUR EXACT GRADIENT */
+        background: linear-gradient(
+          to bottom,
+          #22c55e 40%,
+          #06b6d4 60%,
+          #2563eb 100%
+        );
+      }
+      .programs h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+      } /* GRID */
+      .program-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        max-width: 900px;
+        margin: auto;
+        margin-bottom: 30px;
+      } /* GLASS CARDS */
+      .program-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 15px;
+        padding: 25px;
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .program-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        background: rgba(255, 255, 255, 0.25);
+      }
+      .program-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      .program-card p {
+        font-size: 14px;
+      } /* DESCRIPTION */
+      .program-desc {
+        max-width: 700px;
+        margin: auto;
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: 0.95;
+      }
+      .doctor {
+        padding: 80px 20px;
+        background: #ffffff;
+      }
+      .doctor-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      } /* IMAGE */
+      .doctor-image {
+        flex: 1;
+        text-align: center;
+      }
+      .doctor-image img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+      .doctor-name {
+        margin-top: 15px;
+      }
+      .doctor-name h3 {
+        font-size: 18px;
+      }
+      .doctor-name p {
+        font-size: 14px;
+        color: #64748b;
+      } /* CONTENT */
+      .doctor-content {
+        flex: 1;
+      }
+      .doctor-content h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+      .doctor-content p {
+        color: #475569;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      } /* POINTS */
+      .doctor-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .point {
+        padding: 10px 16px;
+        background: #f1f5f9;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+      .point:hover {
+        background: #e0f2fe;
+      } /* MOBILE */
+      @media (max-width: 900px) {
+        .doctor-container {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      .treatments {
+        padding: 80px 20px;
+        max-width: 1100px;
+        margin: auto;
+      }
+      .treatments h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .treat-sub {
+        text-align: center;
+        color: #64748b;
+        margin-bottom: 40px;
+      }
+      .treatment-group {
+        margin-bottom: 40px;
+      }
+      .treatment-group h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .treatment-group ul {
+        columns: 2;
+        gap: 20px;
+        padding-left: 20px;
+      }
+      .treatment-group li {
+        margin-bottom: 8px;
+        color: #475569;
+      } /* highlight */
+      .highlight-cards {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+      }
+      .highlight {
+        background: linear-gradient(90deg, #0ea5e9, #22c55e);
+        color: white;
+        padding: 15px;
+        border-radius: 12px;
+        font-size: 14px;
+      }
+      .highlight span {
+        font-size: 12px;
+        opacity: 0.9;
+      }
+      .treat-end {
+        text-align: center;
+        margin-top: 40px;
+        color: #64748b;
+      }
+      .facility {
+        padding: 80px 20px;
+        text-align: center;
+        background: #ffffff;
+      }
+      .facility h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .facility-sub {
+        color: #64748b;
+        margin-bottom: 40px;
+      } /* SLIDER */
+      .slider-container {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+        overflow: hidden;
+      }
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slide-card {
+        min-width: 100%;
+        padding: 20px;
+      }
+      .slide-card img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .slide-card p {
+        margin-top: 10px;
+        font-size: 16px;
+      } /* BUTTONS */
+      .slide-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border: none;
+        font-size: 24px;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .left {
+        left: 10px;
+      }
+      .right {
+        right: 10px;
+      }
+      .slide-btn:hover {
+        background: #f1f5f9;
+      }
+      .contact {
+        padding: 80px 20px;
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+      }
+      .contact h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .contact-sub {
+        color: #64748b;
+        margin-bottom: 40px;
+      } /* LAYOUT */
+      .contact-container {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      } /* LEFT */
+      .contact-info {
+        flex: 1;
+        text-align: left;
+      }
+      .contact-box {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+      .contact-box h3 {
+        margin-bottom: 8px;
+      }
+      .contact-box a {
+        color: #0ea5e9;
+        text-decoration: none;
+      } /* RIGHT */
+      .contact-actions {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      } /* BUTTONS */
+      .contact-btn {
+        padding: 14px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      .contact-btn.primary {
+        background: linear-gradient(90deg, #22c55e, #0ea5e9);
+        color: white;
+      }
+      .contact-btn.secondary {
+        border: 1px solid #e2e8f0;
+        color: #1e293b;
+      }
+      .contact-btn:hover {
+        transform: translateY(-3px);
+      } /* MOBILE */
+      @media (max-width: 900px) {
+        .contact-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .contact-info {
+          text-align: center;
+        }
+      }
+      .footer {
+        background: #0f172a;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      } /* TOP */
+      .footer-top h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+      .footer-top p {
+        opacity: 0.9;
+        margin-bottom: 20px;
+      }
+      .footer-btn {
+        display: inline-block;
+        padding: 14px 25px;
+        background: linear-gradient(90deg, #22c55e, #0ea5e9);
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      .footer-btn:hover {
+        transform: translateY(-3px);
+      } /* MIDDLE */
+      .footer-middle {
+        margin-top: 40px;
+      }
+      .footer-middle h3 {
+        margin-bottom: 10px;
+      }
+      .footer-middle p {
+        opacity: 0.8;
+        max-width: 600px;
+        margin: auto;
+      }
+      .footer-tag {
+        margin-top: 10px;
+        font-size: 14px;
+      } /* BOTTOM */
+      .footer-bottom {
+        margin-top: 40px;
+        font-size: 13px;
+        opacity: 0.7;
+      }
+      .map-container {
+        margin-top: 40px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+/* LOADER FULL SCREEN */
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+
+
+overflow:hidden;
+}
+
+/* CENTER CONTENT */
+.loader-content{
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+/* MAIN LOGO */
+.main-logo{
+width:120px;
+}
+
+/* TITLE */
+.loader-content h1{
+font-size:22px;
+letter-spacing:1px;
+color:#1e293b;
+}
+
+/* SPINNER */
+.spinner{
+width:50px;
+height:50px;
+border:4px solid #e2e8f0;
+border-top:4px solid #22c55e;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+/* BRAND LOGO (BOTTOM) */
+.brand-logo{
+position:absolute;
+bottom:20px;
+right:20px;
+width:40px;
+opacity:0.9;
+}
+
+/* ANIMATION */
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* HIDDEN PAGE */
+#stem-page{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+text-align:center;
+padding:20px;
+}
+
+/* CONTENT */
+.stem-content img{
+width:120px;
+margin-bottom:20px;
+}
+
+.stem-content h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.stem-content p{
+color:#475569;
+margin-bottom:20px;
+max-width:500px;
+}
+
+/* VISIT BUTTON */
+.visit-btn{
+padding:12px 25px;
+background:linear-gradient(90deg,#22c55e,#0ea5e9);
+color:white;
+text-decoration:none;
+border-radius:10px;
+}
+
+/* BACK BUTTON */
+.back-btn{
+position:absolute;
+top:20px;
+left:20px;
+background:#f1f5f9;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+    </style>
+  </head>
+  <body>
+
+<div id="loader">
+
+  <div class="loader-content">
+
+    <img src="load_logo.png" class="main-logo">
+
+    <h1>SHASHANK PHYSIOTHERAPY CENTER</h1>
+
+    <div class="spinner"></div>
+
+    <img src="stem_globe.png" class="brand-logo">
+
+  </div>
+
+</div>
+
+    <!-- HEADER -->
+    <header>
+      <div class="navbar">
+        <div class="logo"><img src="logo.png" alt="Logo" /></div>
+        <div class="nav-links">
+          <a href="#about">About</a> 
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a> 
+          <a href="#contact">Contact</a>
+          
+        </div>
+      </div>
+    </header>
+    <!-- HERO -->
+    <section id="about" class="hero">
+      <div class="hero-left">
+        <div class="badges">
+          <div class="badge">🏆 First in Davangere</div>
+          <div class="badge">✓ KPME Registered Centre</div>
+          <div class="badge">♿ Wheelchair & Stretcher Facility Available</div>
+        </div>
+        <h1>
+          Advanced <span class="gradient-text">Physiotherapy</span> & Pain
+          Relief
+        </h1>
+        <p>
+          Experience Davangere's first Advanced 4D Robotic Spinal Decompression
+          and P.E.M.F. (Pulsed Electromagnetic Fields) Combination Therapy at
+          our state-of-the-art AC facility. Expert care for pain relief without
+          drugs or injections.
+        </p>
+        <div class="buttons">
+          <a href="tel:9886515142" class="btn primary">
+  Book Appointment Now
+</a>
+
+<a href="https://g.co/kgs/p1zQxu" target="_blank" class="btn secondary">
+  Rate us on Google
+</a>
+
+<a href="https://www.instagram.com/shashankphysiotherapycentre/" target="_blank" class="btn secondary">
+  Follow Us on Instagram
+</a>
+        </div>
+        <div class="rating">
+          ⭐ 4.9/5 Rating
+          <div class="counter" id="counter">0+</div>
+          <p>Happy Patients</p>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="image_logo.png" alt="Clinic Image" />
+      </div>
+    </section>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+      <h2>Our Available Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Advanced 4D Robotic Spinal Decompression</h3>
+          <p>
+            First in Davangere - Advanced technology for spinal health and pain
+            relief
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>P.E.M.F. Combination Therapy</h3>
+          <p>
+            First in Davangere - Pulsed Electromagnetic Fields for accelerated
+            healing
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>KPME Registered Centre</h3>
+          <p>
+            Officially registered physiotherapy centre with certified standards
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>AC Facility</h3>
+          <p>Comfortable, air-conditioned treatment rooms for your comfort</p>
+        </div>
+        <div class="service-card">
+          <h3>Expert Manual Therapy</h3>
+          <p>
+            Hands-on treatment by skilled physiotherapists for optimal recovery
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Specialized Age-Related Exercise Programs</h3>
+          <p>
+            Custom exercise prescriptions for diabetes, hypertension, cardiac
+            issues & obesity
+          </p>
+        </div>
+        <div class="service-card">
+          <h3>Complete Accessibility</h3>
+          <p>
+            Wheelchair & stretcher facility available for patient convenience
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- SPECIAL PROGRAMS -->
+    <section class="programs">
+      <h2>Specialized Age-Related Exercise Prescription</h2>
+      <div class="program-grid">
+        <div class="program-card">
+          <h3>Diabetes</h3>
+          <p>Blood sugar management</p>
+        </div>
+        <div class="program-card">
+          <h3>Hypertension</h3>
+          <p>Blood pressure control</p>
+        </div>
+        <div class="program-card">
+          <h3>Cardiac Issues</h3>
+          <p>Heart health support</p>
+        </div>
+        <div class="program-card">
+          <h3>Obesity</h3>
+          <p>Weight management</p>
+        </div>
+      </div>
+      <p class="program-desc">
+        Our specialized exercise prescription programs are tailored to your age,
+        health condition, and fitness level. Safe, effective, and
+        scientifically-designed to help you manage chronic conditions and
+        improve overall health.
+      </p>
+    </section>
+    <!-- DOCTOR SECTION -->
+    <section class="doctor">
+      <div class="doctor-container">
+        <!-- LEFT IMAGE -->
+        <div class="doctor-image">
+          <img src="Dr.Shashank.Hullatti.png" alt="Dr. Shashank Hullatti" />
+          <div class="doctor-name">
+            <h3>Dr. Shashank Hullatti</h3>
+            <p>MPT - Master of Physiotherapy</p>
+          </div>
+        </div>
+        <!-- RIGHT CONTENT -->
+        <div class="doctor-content">
+          <h2>Meet Dr. Shashank Hullatti</h2>
+          <p>
+            Dr. Shashank Hullatti, MPT is a highly qualified and experienced
+            consulting physiotherapist specializing in advanced rehabilitation
+            techniques. With expertise in stroke & paralysis rehabilitation,
+            pain management, and cutting-edge treatment modalities, Dr.Shashank
+            Hullatti brings world-class physiotherapy care to Davangere.
+          </p>
+          <div class="doctor-points">
+            <div class="point">MPT Certified</div>
+            <div class="point">Specialized Care</div>
+            <div class="point">Advanced Technology</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="treatments">
+      <h2>Comprehensive Physiotherapy Services</h2>
+      <p class="treat-sub">
+        From advanced spinal decompression to specialized rehabilitation
+        programs, we offer complete care for your recovery
+      </p>
+      <!-- ADVANCED TECH -->
+      <div class="treatment-group">
+        <h3>Advanced Technology</h3>
+        <div class="highlight-cards">
+          <div class="highlight">
+            Advanced 4D Robotic Spinal Decompression<br /><span
+              >First in Davangere</span
+            >
+          </div>
+          <div class="highlight">
+            P.E.M.F. Combination Therapy<br /><span>First in Davangere</span>
+          </div>
+        </div>
+        <ul>
+          <li>Advanced Spinal Decompression</li>
+          <li>LASER Therapy</li>
+          <li>PEMF</li>
+          <li>Ultrasound Therapy</li>
+          <li>Short Wave Diathermy</li>
+          <li>Interferential Therapy (IFT)</li>
+          <li>Heat Therapy & Moist Heat</li>
+          <li>Paraffin Wax Bath</li>
+          <li>Cervical Traction</li>
+          <li>Lumbar Traction</li>
+          <li>Continuous Passive Motion</li>
+          <li>Stimulation Therapy</li>
+        </ul>
+      </div>
+      <!-- PAIN -->
+      <div class="treatment-group">
+        <h3>Pain Management</h3>
+        <ul>
+          <li>Neck Pain & Cervical Spondylosis</li>
+          <li>Back Pain & Lumbar Spondylosis</li>
+          <li>Shoulder Pain & Frozen Shoulder</li>
+          <li>Knee Pain & Osteoarthritis</li>
+          <li>Hip Pain Treatment</li>
+          <li>Foot & Ankle Pain</li>
+          <li>Sciatica Treatment</li>
+          <li>Tennis Elbow</li>
+          <li>Plantar Fasciitis</li>
+          <li>Calcaneal Spur</li>
+          <li>Cervicogenic Headache</li>
+        </ul>
+      </div>
+      <!-- NEURO -->
+      <div class="treatment-group">
+        <h3>Neurological Rehabilitation</h3>
+        <ul>
+          <li>Stroke & Paralysis Rehabilitation</li>
+          <li>Parkinson's Disease Management</li>
+          <li>Bell's Palsy Treatment</li>
+          <li>Neurological Physiotherapy</li>
+          <li>Spinal Injuries Rehabilitation</li>
+          <li>Balance Exercise Therapy</li>
+        </ul>
+      </div>
+      <!-- ORTHO -->
+      <div class="treatment-group">
+        <h3>Orthopedic & Sports</h3>
+        <ul>
+          <li>ACL/PCL Meniscus Injury</li>
+          <li>ACL Rehabilitation</li>
+          <li>Sports Injuries Treatment</li>
+          <li>Post-Surgical Rehabilitation</li>
+          <li>Arthritis Treatment</li>
+          <li>Rheumatoid Arthritis</li>
+        </ul>
+      </div>
+      <!-- SPECIAL -->
+      <div class="treatment-group">
+        <h3>Specialized Therapies</h3>
+        <ul>
+          <li>Expert Manual Therapy</li>
+          <li>Dry Needling / Acupuncture</li>
+          <li>MET (Muscle Energy Technique)</li>
+          <li>Myofascial Release Technique</li>
+          <li>PRE (Progressive Resistance Exercises)</li>
+          <li>Therapeutic Exercise</li>
+          <li>Full Body Advanced Exercises</li>
+          <li>Geriatric Physiotherapy</li>
+          <li>Home Visit Available</li>
+        </ul>
+      </div>
+      <!-- EXERCISE -->
+      <div class="treatment-group">
+        <h3>Exercise Prescription Programs</h3>
+        <div class="highlight">
+          Specialized Age-Related Exercise Prescription<br />
+          <span>First in Davangere</span>
+        </div>
+        <ul>
+          <li>Exercise Prescription for Diabetes</li>
+          <li>Exercise Prescription for Hypertension</li>
+          <li>Exercise Prescription for Cardiac Issues</li>
+          <li>Exercise Prescription for Obesity</li>
+          <li>Exercise Prescription for Antenatal & Postnatal Conditions</li>
+        </ul>
+      </div>
+      <p class="treat-end">
+        Can't find what you're looking for? We offer many more specialized
+        treatments. Call us to discuss your specific needs and recovery goals.
+      </p>
+    </section>
+    <section id="gallery" class="facility">
+      <h2>State-of-the-Art Treatment Center</h2>
+      <p class="facility-sub">
+        Modern equipment, comfortable AC facility, and a healing environment for
+        your recovery
+      </p>
+      <div class="slider-container">
+        <button class="slide-btn left" onclick="slideLeft()">&#10094;</button>
+        <div class="slider" id="slider">
+          <div class="slide-card">
+            <img src="patient_friendly_room.png" />
+            <p>Patient Friendly Atmosphere</p>
+          </div>
+          <div class="slide-card">
+            <img src="treatment_area.png" />
+            <p>Physiotherapy Treatment Area</p>
+          </div>
+          <div class="slide-card">
+            <img src="modern_equip.png" />
+            <p>Modern Equipment</p>
+          </div>
+        </div>
+        <button class="slide-btn right" onclick="slideRight()">&#10095;</button>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <h2>Visit Us Today</h2>
+      <p class="contact-sub">
+        Schedule your appointment and start your journey to recovery
+      </p>
+      <div class="contact-container">
+        <!-- LEFT SIDE -->
+        <div class="contact-left">
+          <div class="contact-box">
+            <h3>📍 Address</h3>
+            <p>
+              3370/18, 12th Main, 1st Cross, Shamanur Rd,<br />
+              Opp. Laxmi Flour Mill, MCC B Block,<br />
+              Davanagere, Karnataka 577004
+            </p>
+          </div>
+          <div class="contact-box">
+            <h3>📞 Phone</h3>
+            <p><a href="tel:9886515142">9886515142</a></p>
+          </div>
+          <div class="contact-box">
+            <h3>⏰ Working Hours</h3>
+            <p>
+              Monday - Saturday: 9:00 AM - 8:00 PM<br />
+              Sunday: 10:00 AM - 2:00 PM
+            </p>
+          </div>
+          <!-- BUTTONS BELOW -->
+          <div class="contact-actions">
+            <a href="tel:9886515142" class="contact-btn primary"> Call Now </a>
+            <a
+              href="https://www.instagram.com/shashankphysiotherapycentre/"
+              target="_blank"
+              class="contact-btn secondary"
+            >
+              Follow Us on Instagram
+            </a>
+          </div>
+        </div>
+        <!-- RIGHT SIDE MAP -->
+        <div class="contact-right">
+          <iframe
+            src="https://www.google.com/maps?q=3370/18,12th%20Main,1st%20Cross,Shamanur%20Rd,Davanagere,Karnataka%20577004&output=embed"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: 15px"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-top">
+        <h2>Ready to Start Your Recovery Journey?</h2>
+        <p>
+          Book your appointment today and experience the difference of advanced
+          physiotherapy care
+        </p>
+        <a href="tel:9886515142" class="footer-btn"> Call Now: 9886515142 </a>
+      </div>
+      <div class="footer-middle">
+        <h3>Shashank Physiotherapy Center</h3>
+        <p>
+          Davangere's premier physiotherapy centre offering advanced 4D Robotic
+          Spinal Decompression and comprehensive rehabilitation services.
+        </p>
+        <p class="footer-tag">
+          KPME Registered Physiotherapy Centre | Led by Dr. Shashank Hullatti,
+          MPT
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2026 Shashank Physiotherapy & Rehab Centre. All rights reserved.
+        </p>
+        <p>Developed By STEM Globe</p>
+      </div>
+<button class="footer-btn" onclick="openStem()">
+  STEM Globe
+</button>
+    </footer>
+
+<section id="stem-page">
+
+  <button class="back-btn" onclick="closeStem()">← Back</button>
+
+  <div class="stem-content">
+    <img src="stem_globe.png" alt="STEM Globe">
+
+    <h1>STEM Globe</h1>
+
+    <p>
+      A world-leading tech innovation startup focused on building next-gen solutions.
+    </p>
+
+    <a href="https://stem-globe-matrix.github.io/stem-globe" target="_blank" class="visit-btn">
+      Visit Website
+    </a>
+  </div>
+
+</section>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ===== SLIDER =====
+  let currentIndex = 0;
+  const slider = document.getElementById("slider");
+  const totalSlides = slider.children.length;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  window.slideRight = function () {
+    currentIndex++;
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
+    }
+    updateSlide();
+  };
+
+  window.slideLeft = function () {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = totalSlides - 1;
+    }
+    updateSlide();
+  };
+
+  // ===== COUNTER =====
+  let count = 150000;
+  let target = 200000;
+
+  const counter = document.getElementById("counter");
+
+  // show instantly
+  counter.innerText = count.toLocaleString('en-IN') + "+";
+
+  let interval = setInterval(() => {
+    count += 1000;
+
+    counter.innerText = count.toLocaleString('en-IN') + "+";
+
+    if (count >= target) {
+      clearInterval(interval);
+    }
+  }, 30);
+
+});
+</script>
+
+<script>
+window.addEventListener("load", function(){
+  setTimeout(()=>{
+    document.getElementById("loader").style.opacity = "0";
+    document.getElementById("loader").style.transition = "0.5s";
+
+    setTimeout(()=>{
+      document.getElementById("loader").style.display = "none";
+    },500);
+
+  },1200); // loading time
+});
+</script>
+
+<script>
+function openStem(){
+  document.getElementById("stem-page").style.display = "flex";
+  document.body.style.overflow = "hidden"; // prevent scroll
+}
+
+function closeStem(){
+  document.getElementById("stem-page").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+</script>
+
+  </body>
+</html>
